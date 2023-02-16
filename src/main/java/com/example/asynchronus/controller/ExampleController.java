@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 public class ExampleController {
@@ -13,6 +15,8 @@ public class ExampleController {
 
     @GetMapping("/test")
     public String test() {
-        return asyncService.asyncService();
+        List<String> list = List.of("task1", "task2", "task3");
+        asyncService.doAsync(list);
+        return "OK";
     }
 }
