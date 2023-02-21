@@ -32,6 +32,10 @@ public class ExampleController {
         log.info("Start");
         CompletableFuture<String> employeeName = asyncService.getEmployeeName();
         CompletableFuture<String> employeePhone = asyncService.getEmployeePhone();
+        for (int i=0; i<10; i++) {
+            Thread.sleep(100);
+            log.info("main");
+        }
 
 //        log.info("EmployeeName--> " + employeeName.get());
 //        log.info("EmployeePhone--> " + employeePhone.get());

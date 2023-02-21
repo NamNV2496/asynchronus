@@ -22,6 +22,11 @@ Call async custom config by:
 
 ![img_3.png](img_3.png)
 
+Use `CompletedFuture` to return main thread
+
+![img.png](img.png)
+![img_2.png](img_2.png)
+
 # Use EAAsync
 
 ![img_6.png](img_6.png)

@@ -55,19 +55,18 @@ public class AsyncService {
 
 
     @SneakyThrows
-    @Async("asyncExecutor")
     public CompletableFuture<String> getEmployeeName() {
         log.info("getEmployeeName Starts");
         Thread.sleep(1000L);	//Intentional delay
         log.info("employeeNameData completed");
-        return CompletableFuture.supplyAsync(() -> "John");
+        return CompletableFuture.completedFuture("John");
     }
 
     @SneakyThrows
-    @Async("asyncExecutor")
+//    @Async("asyncExecutor")
     public CompletableFuture<String> getEmployeePhone() {
         log.info("getEmployeePhone Starts");
-        Thread.sleep(5000L);	//Intentional delay
+        Thread.sleep(500L);	//Intentional delay
         log.info("employeePhoneData completed");
         return CompletableFuture.supplyAsync(() -> "12313432343").thenApply(n -> {log.info("result: " + n); return "result is " + n;});
     }
