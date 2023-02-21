@@ -59,7 +59,7 @@ public class AsyncService {
         log.info("getEmployeeName Starts");
         Thread.sleep(1000L);	//Intentional delay
         log.info("employeeNameData completed");
-        return CompletableFuture.completedFuture("John");
+        return CompletableFuture.completedFuture("John").thenApply(n -> {log.info("getEmployeeName: " + n); return "result is " + n;});
     }
 
     @SneakyThrows
@@ -68,7 +68,7 @@ public class AsyncService {
         log.info("getEmployeePhone Starts");
         Thread.sleep(500L);	//Intentional delay
         log.info("employeePhoneData completed");
-        return CompletableFuture.supplyAsync(() -> "12313432343").thenApply(n -> {log.info("result: " + n); return "result is " + n;});
+        return CompletableFuture.supplyAsync(() -> "12313432343").thenApply(n -> {log.info("getEmployeePhone: " + n); return "result is " + n;});
     }
 
     private AsyncStatus actionNeedRunMultiThread() {
