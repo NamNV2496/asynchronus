@@ -1,9 +1,11 @@
 
 
-
 async-config:
   connector-deposit:
-    core-pool-size: 2
-    max-pool-size: 5
-    queue-pool-size: 100
-    thread-prefix-name: async-thread-config-
+    core-pool-size: 5
+    max-pool-size: 10
+    queue-pool-size: 50
+    thread-name-prefix: async-thread-config-
+spring:
+  application:
+    name: async

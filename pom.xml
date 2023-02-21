@@ -28,6 +28,15 @@
             <optional>true</optional>
         </dependency>
 
+
+<!--        EA async-->
+        <dependency>
+            <groupId>com.ea.async</groupId>
+            <artifactId>ea-async</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
